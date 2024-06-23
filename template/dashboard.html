@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Dashboard</title>
+    <link rel="stylesheet" href="/static/dashboard.css" type="text/css">
+  </head>
+  <body>
+    <h3 class="heading">Dashboard</h3>
+    <div class="container">
+      <div class="card p-4 shadow">
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="alert alert-success">
+          {% for message in messages %}
+          <p>{{ message }}</p>
+          {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+
+        <div class="card-body">
+          <h1>Welcome to Dashboard</h1>
+        </div>
+        <div class="table-container">
+          <table class="table">
+            <tr>
+              {% for header in headings%}
+              <th>{{header}}</th>
+              {% endfor %}
+              <th>Edit</th>
+              <th>Delete</th>
+            </tr>
+            {% for row in data %}
+            <tr>
+             {% for cell in row%}
+             <td>{{cell}}</td>
+             {% endfor %}
+             <td data-lable="edit" class="edit">
+              <a href="{{url_for('editUsers',id=data.ID)}}">Edit</a>
+            </td>
+            <td class="delete">
+              <a
+                onclick="return confirm('Are you sure to delete ? ');"
+                href="{{url_for('deleteUsers',id=data.ID)}}"
+                >Delete</a
+              >
+            </td>
+            </tr>
+            {% endfor %}
+          </table>
+      </div>
+    </div>
+  </body>
+  <footer>
+    <p class="logout"><a href="{{url_for('logout')}}">Logout</a></p>
+  </footer>
+</html>

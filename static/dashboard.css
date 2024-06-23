@@ -1,0 +1,99 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+* {
+  font-family: "Montserrat", sans-serif;
+  box-sizing: border-box;
+  margin: 0;
+}
+body {
+  background-color: rgb(238, 238, 238);
+}
+::selection {
+  background: rgb(39, 232, 135);
+  color: white;
+}
+.heading {
+  font-size: 30px;
+  text-align: center;
+  color: rgb(243, 243, 243);
+  background-color: rgb(51, 0, 255);
+  padding: 40px 0;
+  margin-bottom: 0;
+}
+
+/* table */
+
+.table {
+  width: 100%;
+  border-collapse: collapse;
+  margin: 0px auto;
+}
+.table th {
+  background-color: rgb(36, 255, 146);
+}
+.table tr th {
+  font-size: 14px;
+  font-weight: 800;
+  letter-spacing: 0.35px;
+  color: #242424;
+  opacity: 1;
+  padding: 12px;
+  vertical-align: top;
+  border: 1px solid #dee2e685;
+}
+.table tr td {
+  font-size: 14px;
+  letter-spacing: 0.35px;
+  font-weight: medium;
+  color: #000000;
+  background-color: #ffffff;
+  padding: 15px;
+  text-align: center;
+  border: 0.5px solid #dee2e685;
+}
+
+.edit a {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.35px;
+  color: rgb(9, 208, 108);
+  text-decoration: none;
+
+  padding: 4px 2px;
+}
+.delete a {
+  font-size: 14px;
+  font-weight: bold;
+  letter-spacing: 0.35px;
+  color: rgb(255, 12, 12);
+  text-decoration: none;
+}
+footer {
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: rgb(37, 37, 37);
+  padding: 20px 10px;
+}
+footer p {
+  text-align: center;
+  margin-top: 10%;
+  margin: 0;
+}
+.logout {
+  margin: 0;
+
+  /* background-color: rgb(36, 235, 135); */
+}
+.logout a {
+  text-decoration: none;
+  font-weight: bold;
+  color: rgb(37, 37, 37);
+  background-color: rgb(39, 232, 135);
+  padding: 5px 10px;
+  border-radius: 6px;
+  border: 1px solid;
+}
+.logout a:hover {
+  border-color: rgb(39, 232, 135);
+  transition: 0.5s;
+}

@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Create Table</title>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+      * {
+        font-family: "Montserrat", sans-serif;
+        box-sizing: border-box;
+        margin: 0;
+      }
+      body {
+        background-color: rgb(238, 238, 238);
+      }
+      .heading {
+        font-size: 30px;
+        text-align: center;
+        color: rgb(243, 243, 243);
+        background-color: rgb(51, 0, 255);
+        padding: 40px 0;
+        margin-bottom: 0;
+      }
+    </style>
+  </head>
+  <body>
+    <h3 class="heading">Table Create</h3>
+    <table class="table">
+      {% for x in range(serach_query | x ) %}
+      <tr>
+        <td>
+          <input type="text" name="i{{ x }}" />
+          <input type="hidden" value="{{ search_query }}" />
+        </td>
+      </tr>
+      {% endfor %}
+      <input type="submit" value="Submit" />
+    </table>
+  </body>
+</html>

@@ -1,0 +1,319 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>UserManagement</title>
+    <link rel="stylesheet" type="text/css" href="/static/head.css" />
+    <script>
+      var ALERT_TITLE = "Cantact";
+      var ALERT_BUTTON_TEXT = "Ok";
+
+      if (document.getElementById) {
+        window.alert = function (txt) {
+          createCustomAlert(txt);
+        };
+      }
+
+      function createCustomAlert(txt) {
+        d = document;
+
+        if (d.getElementById("modalContainer")) return;
+
+        mObj = d
+          .getElementsByTagName("body")[0]
+          .appendChild(d.createElement("div"));
+        mObj.id = "modalContainer";
+        mObj.style.height = d.documentElement.scrollHeight + "px";
+
+        alertObj = mObj.appendChild(d.createElement("div"));
+        alertObj.id = "alertBox";
+        if (d.all && !window.opera)
+          alertObj.style.top = document.documentElement.scrollTop + "px";
+        alertObj.style.left =
+          (d.documentElement.scrollWidth - alertObj.offsetWidth) / 2 + "px";
+        alertObj.style.visiblity = "visible";
+
+        h1 = alertObj.appendChild(d.createElement("h1"));
+        h1.appendChild(d.createTextNode(ALERT_TITLE));
+
+        msg = alertObj.appendChild(d.createElement("p"));
+        //msg.appendChild(d.createTextNode(txt));
+        msg.innerHTML = txt;
+
+        btn = alertObj.appendChild(d.createElement("a"));
+        btn.id = "closeBtn";
+        btn.appendChild(d.createTextNode(ALERT_BUTTON_TEXT));
+        btn.href = "#";
+        btn.focus();
+        btn.onclick = function () {
+          removeCustomAlert();
+          return false;
+        };
+
+        alertObj.style.display = "block";
+      }
+
+      function removeCustomAlert() {
+        document
+          .getElementsByTagName("body")[0]
+          .removeChild(document.getElementById("modalContainer"));
+      }
+    </script>
+    <style>
+      @import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+      * {
+        font-family: "Montserrat", sans-serif;
+        margin: 0;
+        /* box-sizing: border-box; */
+        padding: 0;
+      }
+
+      #modalContainer {
+        background-color: rgba(0, 0, 0, 0.3);
+        position: absolute;
+        width: 100%;
+        height: 100%;
+        top: 0px;
+        left: 0px;
+        z-index: 10000;
+        background-image: url(tp.png); /* required by MSIE to prevent actions on lower z-index elements */
+      }
+
+      #alertBox {
+        position: relative;
+        width: 400px;
+        min-height: 200px;
+        margin-top: 200px;
+        margin-bottom: 150px;
+        border: 0.5px solid #2a2a2a;
+        border-radius: 20px;
+        background-color: #1b1b1f;
+        color: azure;
+        background-repeat: no-repeat;
+        background-position: 20px 30px;
+      }
+
+      #modalContainer > #alertBox {
+        position: fixed;
+      }
+
+      #alertBox h1 {
+        margin: 0;
+        font-family: "Montserrat", sans-serif;
+        background-color: rgb(29, 208, 119);
+        color: #fff;
+        border-radius: 20px 20px 0 0;
+        border-bottom: 1px solid #22db75;
+        padding: 10px 0 5px 10px;
+      }
+
+      #alertBox p {
+        font: 14px "Montserrat", sans-serif;
+        height: 50px;
+        margin-top: 30px;
+        padding-left: 5px;
+        margin-left: 55px;
+        margin-right: 20px;
+        letter-spacing: 0.5px;
+        line-height: 25px;
+        margin-bottom: 20px;
+      }
+
+      #alertBox #closeBtn {
+        display: block;
+        position: relative;
+        margin: 40px auto;
+        padding: 7px 10px;
+        border: 0 none;
+        width: 70px;
+        font: 0.7em verdana, arial;
+        text-transform: uppercase;
+        text-align: center;
+        color: #fff;
+        background-color: rgb(12, 107, 60);
+        border-radius: 10px;
+        text-decoration: none;
+        margin-bottom: 20px;
+      }
+      #alertBox #closeBtn:hover {
+        background-color: #17b55e;
+      }
+
+      /* unrelated styles */
+
+      /* #mContainer {
+        position: relative;
+        width: 600px;
+        margin: auto;
+        padding: 5px;
+        border-top: 2px solid #000;
+        border-bottom: 2px solid #000;
+        font: 0.7em verdana, arial;
+      } */
+
+      /* h1,
+      h2 {
+        margin: 0;
+        padding: 4px;
+        font: bold 1.5em verdana;
+        border-bottom: 1px solid #000;
+      } */
+
+      code {
+        font-size: 1.2em;
+        color: rgb(41, 161, 221);
+      }
+
+      #credits {
+        position: relative;
+        margin: 25px auto 0px auto;
+        width: 350px;
+        font: 0.7em verdana;
+        border-top: 1px solid #000;
+        border-bottom: 1px solid #000;
+        height: 90px;
+        padding-top: 4px;
+      }
+
+      #credits img {
+        float: left;
+        margin: 5px 10px 5px 0px;
+        border: 1px solid #000000;
+        width: 80px;
+        height: 79px;
+      }
+
+      .important {
+        background-color: #f5fcc8;
+        padding: 2px;
+      }
+
+      code span {
+        color: green;
+      }
+
+      /* .btn input {
+        margin: 10px 30px;
+        border: none;
+        background-color: blue;
+        padding: 12px 10px;
+        border-radius: 10px;
+        color: azure;
+        font-weight: bold;
+      } */
+    </style>
+  </head>
+
+  <body>
+    <header>
+      <h4 class="logo" style="color: #edf0f1">USER MANAGEMENT</h4>
+      <nav>
+        <ul class="nav__links">
+          <li>
+            <a
+              onclick="return confirm('Are you sure to Logout ? ');"
+              href="{{url_for('index')}}"
+              >Home</a
+            >
+          </li>
+          <li><a href="{{url_for('register')}}">SignUp</a></li>
+          <li>
+            <a
+              onclick="return confirm('Are you sure to Logout? ');"
+              href="{{url_for('logout')}}"
+              >Logout</a
+            >
+          </li>
+          <li><a href="{{url_for('about')}}">About</a></li>
+        </ul>
+      </nav>
+      <div class="btn">
+        <a class="cta"
+          ><input
+            class="cta"
+            type="button"
+            value="Contact"
+            onclick="alert('Hariharan<br> hari2822haran@gmail.com<br> +91 88703 *****');"
+        /></a>
+      </div>
+    </header>
+    <div class="card-body">
+      <h4>
+        {% with messages = get_flashed_messages() %} {% if messages %}
+        <div class="alert alert-success">
+          {% for message in messages %} {{ message }} {% endfor %}
+        </div>
+        {% endif %} {% endwith %}
+      </h4>
+
+      <div class="table-container">
+        <div class="order-user">
+          <p class="add-user">
+            <a href="{{url_for('addUsers')}}">Add Users</a>
+          </p>
+          <p class="truncate-user">
+            <a
+              onclick="return confirm('Are you sure to Truncate ? ');"
+              href="{{url_for('truncate')}}"
+              >Truncate Users</a
+            >
+          </p>
+        </div>
+        <table class="table">
+          <tr>
+            <th>ID</th>
+            <th>NAME</th>
+            <th>AGE</th>
+            <th>CITY</th>
+            <th>EDIT</th>
+            <th>DELETE</th>
+          </tr>
+          {% for data in datas %}
+          <tr>
+            <td data-lable="id">{{data.ID}}</td>
+            <td data-lable="name">{{data.NAME}}</td>
+            <td data-lable="age">{{data.AGE}}</td>
+            <td data-lable="city">{{data.CITY}}</td>
+            <td data-lable="edit" class="edit">
+              <a href="{{url_for('editUsers',id=data.ID)}}">Edit</a>
+            </td>
+            <td class="delete">
+              <a
+                onclick="return confirm('Are you sure to delete ? ');"
+                href="{{url_for('deleteUsers',id=data.ID)}}"
+                >Delete</a
+              >
+            </td>
+          </tr>
+          {% endfor %}
+        </table>
+      </div>
+    </div>
+  </body>
+
+  <footer class="footer-css">
+    <nav>
+      <ul class="nav__footer">
+        <li>
+          <a
+            onclick="return confirm('Are you sure to Logout ? ');"
+            href="{{url_for('index')}}"
+            >Home</a
+          >
+        </li>
+        <li><a href="{{url_for('register')}}">SignUp</a></li>
+        <li>
+          <a
+            onclick="return confirm('Are you sure to Logout? ');"
+            href="{{url_for('logout')}}"
+            >Logout</a
+          >
+        </li>
+        <li><a href="{{url_for('about')}}">About</a></li>
+      </ul>
+    </nav>
+    <h3 class="footer-txt">USER MANAGEMENT</h3>
+  </footer>
+</html>

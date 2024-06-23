@@ -1,0 +1,189 @@
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:wght@300&display=swap");
+
+body {
+  margin: 0;
+  padding: 0;
+  font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto,
+    Oxygen, Ubuntu, Cantarell, "Open Sans", "Helvetica Neue", sans-serif;
+
+  background: #1b1b1f;
+  height: 100vh;
+  overflow: hidden;
+}
+
+li,
+a,
+button {
+  font-weight: 500;
+  font-size: 16px;
+  color: #edf0f1;
+  text-decoration: none;
+}
+header {
+  font-family: "Montserrat", sans-serif;
+  background: #24252a;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 30px 10%;
+}
+
+.logo {
+  cursor: pointer;
+  margin-right: auto;
+}
+
+.nav__links {
+  list-style: none;
+  padding: 0px 20px;
+}
+
+.nav__links li {
+  display: inline-block;
+  padding: 0px 20px;
+}
+
+.nav__links li a {
+  transition: alt 0.3s ease 0s;
+}
+
+.nav__links li a:hover {
+  color: rgb(39, 232, 135);
+}
+.cta input {
+  padding: 9px 25px;
+  font-family: "Montserrat", sans-serif;
+  background-color: rgb(19, 157, 88);
+  color: azure;
+  border: 0.5px solid rgb(19, 174, 97);
+  border-radius: 50px;
+  cursor: pointer;
+  font-weight: 500;
+  font-size: 16px;
+  transition: alt 0.3s ease 0s;
+  margin-left: 20px;
+}
+.cta input:hover {
+  background-color: rgb(12, 107, 60);
+}
+.center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -60%);
+  width: 500px;
+  background: white;
+  border-radius: 15px;
+  margin: 8% auto;
+  padding-top: 20px;
+}
+.center h1 {
+  text-align: center;
+  padding: 0 0 20px 0;
+  border-bottom: 1px solid silver;
+}
+.center form {
+  padding: 0 50px;
+  box-sizing: border-box;
+}
+form .text_field {
+  position: relative;
+  border-bottom: 2px solid #adadad;
+  margin: 30px 0;
+}
+.text_field input {
+  width: 100%;
+  padding: 0 6px;
+  height: 40px;
+  font-size: 16px;
+  border: none;
+  background: none;
+  outline: none;
+}
+.text_field label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  color: #adadad;
+  transform: translateY(-50%);
+  font-size: 16px;
+  pointer-events: none;
+  transition: 0.4s;
+}
+.text_field span::before {
+  content: "";
+  position: absolute;
+  top: 40px;
+  left: 0;
+  width: 0%;
+  height: 2px;
+  background: rgb(39, 232, 135);
+  transition: 0.5s;
+}
+
+.text_field input:focus ~ label,
+.text_field input:valid ~ label {
+  top: -5px;
+  color: rgb(32, 200, 116);
+}
+.text_field input:focus ~ span::before,
+.text_field input:valid ~ span::before {
+  width: 100%;
+}
+.pass {
+  margin: -5px 0 20px 5px;
+  color: #a6a6a6;
+  cursor: pointer;
+}
+.pass:hover {
+  text-decoration: underline;
+}
+input[type="submit"] {
+  width: 100%;
+  height: 50px;
+  border: 1px solid;
+  background: rgb(39, 232, 135);
+  border-radius: 30px;
+  font-size: 18px;
+  color: #e9f4fb;
+  font-weight: 500;
+  cursor: pointer;
+  outline: none;
+}
+::selection {
+  background: rgb(39, 232, 135);
+  color: white;
+}
+input[type="submit"]:hover {
+  border-color: rgb(39, 232, 135);
+  transition: 0.5s;
+}
+.signup_link {
+  margin: 30px 0;
+  text-align: center;
+  font-size: 16px;
+  color: #666666;
+}
+.signup_link a {
+  color: rgb(39, 232, 135);
+  text-decoration: none;
+}
+.signup_link a:hover {
+  text-decoration: underline;
+}
+.card-body h3 {
+  text-align: center;
+  color: antiquewhite;
+  margin-bottom: 5%;
+  font-family: "Montserrat", sans-serif;
+  padding: 20px;
+}
+
+/* footer con {
+  bottom: 0;
+  background-color: #24252a;
+  padding: 20px 30px;
+}
+footer h1 {
+  color: white;
+} */

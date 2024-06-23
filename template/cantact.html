@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Cantact</title>
+    <link rel="stylesheet" href="/static/cantact.css" type="text/css" />
+  </head>
+  <body>
+    <header>
+      <h4 class="logo" style="color: #edf0f1">ABOUT</h4>
+      <nav>
+        <ul class="nav__links">
+          <li><a href="{{url_for('index')}}">Home</a></li>
+          <li><a href="{{url_for('login')}}">Login</a></li>
+          <li><a href="{{url_for('register')}}">SignUp</a></li>
+        </ul>
+      </nav>
+      <a class="cta" href="{{url_for('cantact')}}"><button>Cantact</button></a>
+    </header>
+    <section class="about">
+      <div class="main">
+        <div class="about-text">
+          <h1>Cantact Us</h1>
+          <h5>Hariharan</h5>
+          <h6>Developer <span> & Designer </span></h6>
+          <h6>Email :<span> hari2822haran@gmail.com </span></h6>
+        </div>
+      </div>
+    </section>
+  </body>
+  <footer class="footer-css">
+    <nav>
+      <ul class="nav__footer">
+        <li><a href="{{url_for('index')}}">Home</a></li>
+        <li><a href="{{url_for('login')}}">Login</a></li>
+        <li><a href="{{url_for('register')}}">SignUp</a></li>
+      </ul>
+    </nav>
+    <h3 class="footer-txt">USER MANAGEMENT</h3>
+  </footer>
+</html>
